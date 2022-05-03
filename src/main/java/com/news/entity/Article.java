@@ -26,6 +26,8 @@ public class Article {
     @NotBlank
     private String author;
 
+    private String image;
+
     @ManyToOne
     @JoinColumn(name = "category_id")
     @JsonIgnoreProperties("articles")

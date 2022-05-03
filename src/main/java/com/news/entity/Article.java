@@ -38,6 +38,7 @@ public class Article {
 
     @PrePersist
     private void publishAt() {
-        publishAt = LocalDate.now();
+        if (publishAt == null)
+            publishAt = LocalDate.now();
     }
 }

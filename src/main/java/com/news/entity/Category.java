@@ -4,7 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-import java.util.List;
+import java.util.Set;
 
 @Builder
 @AllArgsConstructor
@@ -26,6 +26,6 @@ public class Category {
     @NotBlank
     private String slug;
 
-    @OneToMany(mappedBy = "category")
-    private List<Article> articles;
+    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
+    private Set<Article> articles;
 }

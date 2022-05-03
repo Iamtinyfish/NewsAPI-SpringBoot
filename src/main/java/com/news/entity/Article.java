@@ -1,5 +1,6 @@
 package com.news.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
 
 import javax.persistence.*;
@@ -28,6 +29,7 @@ public class Article {
 
     @ManyToOne
     @JoinColumn(name = "category_id")
+    @JsonIgnoreProperties("articles")
     private Category category;
 
     @NotBlank

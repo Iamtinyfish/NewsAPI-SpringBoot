@@ -1,10 +1,10 @@
 package com.news.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-import java.util.HashSet;
 import java.util.Set;
 
 @Builder
@@ -28,5 +28,6 @@ public class Category {
     private String slug;
 
     @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
-    private Set<Article> articles = new HashSet<>();
+    @JsonIgnoreProperties("category")
+    private Set<Article> articles = new java.util.HashSet<>();
 }

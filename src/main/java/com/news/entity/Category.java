@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import java.util.HashSet;
 import java.util.Set;
 
 @Builder
@@ -27,5 +28,5 @@ public class Category {
     private String slug;
 
     @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
-    private Set<Article> articles;
+    private Set<Article> articles = new HashSet<>();
 }

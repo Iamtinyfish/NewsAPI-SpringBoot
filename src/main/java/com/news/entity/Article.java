@@ -26,8 +26,8 @@ public class Article {
     @NotBlank
     private String author;
 
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "category_id", nullable = false)
+    @ManyToOne
+    @JoinColumn(name = "category_id")
     private Category category;
 
     @NotBlank
